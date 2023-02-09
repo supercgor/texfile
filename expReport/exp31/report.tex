@@ -1,0 +1,233 @@
+\documentclass[a4paper]{article}
+
+\def\doctitle{实验三十一\ 光栅特性及测定光波波长}
+
+\def\docabstract{光栅是一个常用的分光元件，由于其有出色的分辨能力，故现代的光谱仪等都会利用其来分解光线，测量光的波长。这个实验将测量光栅的空间频率$\frac{1}{d}$，然后通过它的空间频率测出汞灯的双黄线频率，进而得到其角色散率$D$，再通过钠的双黄线来得其色分辨本领$R$}
+
+\def\dockeywords{光栅、角色散率、色分辨本领}
+
+\usepackage{see-exp}
+
+\def\doctoc{false}
+
+\setlength{\parindent}{2em}
+
+\begin{document}
+
+%title123
+\input{../../texmf/see-exp-title.tex}
+
+%contents here
+\section{实验概要}
+%
+\subsection{实验目的}
+\begin{enumerate}
+	\item 了解光栅的主要特性。
+	\item 用光栅测光波波长。
+	\item 掌握调节和使用分光计。
+\end{enumerate}
+%
+\subsection{实验仪器}
+分光计，透射光栅，平面镜，水银灯，钠光灯，可调狭缝，读数显微镜。
+
+\section{实验原理及数据处理}
+\subsection{调整实验用的光路}
+本实验在分光计上进行，要求平行光管产生平行光，望远镜聚焦于无穷远，并使平行光管和望远镜的光轴垂直仪器的转轴。\par
+
+光栅的调节要先调节光栅平面与平行光管光轴垂直，先用水银灯把光管的狭缝照亮，使望远镜目镜中分划板中心垂直线对准狭缝像，然后固定望远镜，把光栅放置在载物台上，大概调节光栅平面垂直平分$b_1b_2$连线，而$b_3$应在光栅平面反射回来的亮“$+$”字像与分划板$MN$线重合，再调节平行光管的狭缝像与“$+$”字像重合。\par
+
+再调节光栅其刻痕与仪器转轴平行，使各条衍射谱线的等高面垂直分光计转轴，以便从刻度圆般上正确读出各条谱线的衍射角。先松开望远镜的紧固螺线，转动望远镜，找到光栅的一级和二级衍射谱线，$\pm1,\pm2...$级谱线分别位于0级的两侧，调节$b_3$，使各条谱线中点与分划板圆心重合，即使两边光谱等高，调好后，再检查光栅平面是否仍保持与平行光管光轴垂直，反复调节。\par
+
+\clearpage
+
+\subsection{测定光栅常量}
+\begin{spacing}{1.6}
+	以水银灯为光源，整体移动分光计对准光源，测出$k=\pm1$级，波长为$\SI{546.07}{\nm}$绿光的衍射角$\phi_{+1}$和$\phi_{-1}$，重复测量3次后，求平均值$\bar{\phi_1}$，进而求出$d$。\par
+	以下为测量的数据
+\end{spacing}
+
+\begin{table}[htbp]
+	\centering
+	\captionsetup{justification=centering,margin=2cm}
+	\caption{\label{tab:tab_data1}0级衍射角实验数据表}
+	\setlength{\tabcolsep}{3mm}{
+		\begin{tabular}{ccc}\hline\hline
+			\multirow{2}{*}{n} & 左游标读数          & 右游标读数          \\
+			                   & $\theta_0^{'\circ}$ & $\theta_0^{'\circ}$ \\\hline
+			1                  & \ang{264;15;}       & \ang{84;17;}        \\
+			2                  & \ang{264;16;}       & \ang{84;19;}        \\
+			3                  & \ang{264;16;}       & \ang{84;18;}        \\\hline\hline
+		\end{tabular}}
+\end{table}\par
+
+继续测量绿线的$k=\pm 1$的衍射角得到:
+\begin{table}[htbp]
+	\centering
+	\captionsetup{justification=centering,margin=2cm}
+	\caption{\label{tab:tab_data2}绿线$\pm1$级衍射角实验数据表}
+	\setlength{\tabcolsep}{3mm}{
+		\begin{tabular}{cccccccc}\hline\hline
+			\multirow{2}{*}{k}      & \multirow{2}{*}{n} & \multicolumn{2}{c}{左游标读数} & \multicolumn{2}{c}{右游标读数}              & 左右平均值                                                                                                                                          \\
+			                        &                    & $\theta^\prime$                & $\phi^\prime=\theta^\prime-\theta^\prime_0$ & $\theta^{\prime\prime}$ & $\phi^{\prime\prime}=\theta^{\prime\prime}-\theta^{\prime\prime}_0$ & $\phi=\frac{1}{2}(\phi^\prime+\phi^{\prime\prime})$ \\\hline
+			\multirow{3}{*}{$+1$级} & 1                  & \ang{283;22;}                  & \ang{19;7;}                                 & \ang{103;25;}           & \ang{19;8;}                                                         & \ang{19;7;30}                                       \\
+			                        & 2                  & \ang{283;22;}                  & \ang{19;6;}                                 & \ang{103;26;}           & \ang{19;7;}                                                         & \ang{19;6;30}                                       \\
+			                        & 3                  & \ang{283;22;}                  & \ang{19;6;}                                 & \ang{103;26;}           & \ang{19;8;}                                                         & \ang{19;7;}                                         \\\hline
+			\multirow{3}{*}{$-1$级} & 1                  & \ang{245;10;}                  & \ang{19;5;}                                 & \ang{65;10;}            & \ang{19;7;}                                                         & \ang{19;6;}                                         \\
+			                        & 2                  & \ang{245;10;}                  & \ang{19;6;}                                 & \ang{65;11;}            & \ang{19;8;}                                                         & \ang{19;7;}                                         \\
+			                        & 3                  & \ang{245;11;}                  & \ang{19;5;}                                 & \ang{65;10;}            & \ang{19;8;}                                                         & \ang{19;6;30}                                       \\\hline\hline
+		\end{tabular}}
+\end{table}\par
+
+我们可以得到$\bar\phi=0.333576$，标准差为$\sigma_{\phi}=0.000152543$，那么$\phi$的实验值为
+
+$$\phi=\errorSI{0.3336 \pm 0.0002}{\rad}$$
+
+又由光栅的衍射公式:
+
+$$d\sin{\phi}=k\lambda$$
+
+得到光栅的光栅常数$d$及空间频率$f$:
+
+$$\begin{aligned}
+		d & =\frac{\lambda}{\sin{\phi}}=\SI{1.66784e-3}{\mm}              \\
+		f & =\frac{1}{d}=\frac{\sin{\phi}}{\lambda}=\SI{599.579}{\per\mm}
+	\end{aligned}$$
+
+同样可以计算其光栅常数及频率的标准差$\sigma_d,\sigma_f$
+
+$$\begin{aligned}
+		\sigma_d & =\lambda\cdot\cot{\phi}\csc{\phi}\cdot\sigma_\phi=\SI{0.000734194e-3}{\mm} \\
+		\sigma_f & =\frac{1}{\lambda}\cdot\cos{\phi}\cdot\sigma_\phi=\SI{0.263939}{\per\mm}
+	\end{aligned}$$
+
+最后可以得到$d,f$的实验值
+
+$$\begin{aligned}
+		d & =\errorSI{1.6678\pm 0.0007e-3}{\mm} \\
+		f & =\errorSI{599.6\pm 0.3}{\per\mm}
+	\end{aligned}$$
+
+\subsection{测量未知光波波长及角色散率}
+用上述同样方法，在$k=\pm1$级时，测量出水银灯的两条黄线$(y_1)$及黄$(y_2)$的衍射角$\bar\phi_y1$和$\bar\phi_y2$，即可知道他们的波长$\lambda_{y1},\lambda_{y_2}$及其波长差$\Delta\lambda$值。\par
+
+由于在第一次实验过程中，仪器受外部因素影响，故这里将会重新测量$\theta_0$来确定0级谱线的角位置。实验数据如下表:
+
+\begin{table}[htbp]
+	\centering
+	\captionsetup{justification=centering,margin=2cm}
+	\caption{\label{tab:tab_data3}0级衍射角实验数据表}
+	\setlength{\tabcolsep}{3mm}{
+		\begin{tabular}{ccc}\hline\hline
+			\multirow{2}{*}{n} & 左游标读数          & 右游标读数          \\
+			                   & $\theta_0^{'\circ}$ & $\theta_0^{'\circ}$ \\\hline
+			1                  & \ang{275;38;}       & \ang{95;40;}        \\
+			2                  & \ang{275;39;}       & \ang{95;40;}        \\
+			3                  & \ang{275;39;}       & \ang{95;41;}        \\\hline\hline
+		\end{tabular}}
+\end{table}\par
+
+测量后得到的数据如下表
+
+\begin{table}[htbp]
+	\centering
+	\captionsetup{justification=centering,margin=2cm}
+	\caption{\label{tab:tab_data4}双黄线$\pm1$级衍射角实验数据表}
+	\setlength{\tabcolsep}{2.5mm}{
+		\begin{tabular}{cccccccc}\hline\hline
+			\multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}谱\\ 线\end{tabular}} & \multirow{2}{*}{k}      & \multirow{2}{*}{n} & \multicolumn{2}{c}{左游标读数} & \multicolumn{2}{c}{右游标读数}              & \multicolumn{1}{c}{左右平均值}                                                                                                                                    \\
+			                                           &                         &                    & $\theta^\prime$                & $\phi^\prime=\theta^\prime-\theta^\prime_0$ & $\theta^{\prime\prime}$        & $\phi^{\prime\prime}=\theta^{\prime\prime}-\theta^{\prime\prime}_0$ & $\phi^\prime=\frac{1}{2}(\phi^\prime+\phi^{\prime\prime})$ \\\hline              \multirow{6}{*}{$y_1$}                      & \multirow{3}{*}{$+1$级} & 1                  & \ang{295;54;}                  & \ang{20;16;}                                & \ang{115;59;}                  & \ang{20;19;}                                                        & \ang{20;17;30}                                             \\
+			                                           &                         & 2                  & \ang{295;54;}                  & \ang{20;15;}                                & \ang{115;58;}                  & \ang{20;18;}                                                        & \ang{20;16;30}                                             \\
+			                                           &                         & 3                  & \ang{295;54;}                  & \ang{20;15;}                                & \ang{115;59;}                  & \ang{20;18;}                                                        & \ang{20;16;30}                                             \\
+			                                           & \multirow{3}{*}{$-1$级} & 1                  & \ang{255;26;}                  & \ang{20;12;}                                & \ang{75;26;}                   & \ang{20;14;}                                                        & \ang{20;13;}                                               \\
+			                                           &                         & 2                  & \ang{255;26;}                  & \ang{20;13;}                                & \ang{75;26;}                   & \ang{20;14;}                                                        & \ang{20;13;30}                                             \\
+			                                           &                         & 3                  & \ang{255;26;}                  & \ang{20;13;}                                & \ang{75;26;}                   & \ang{20;15;}                                                        & \ang{20;14;}                                               \\\hline
+			\multirow{6}{*}{$y_2$}                     & \multirow{3}{*}{$+1$级} & 1                  & \ang{295;60;}                  & \ang{20;22;}                                & \ang{115;65;}                  & \ang{20;25;}                                                        & \ang{20;23;30}                                             \\
+			                                           &                         & 2                  & \ang{295;60;}                  & \ang{20;21;}                                & \ang{115;64;}                  & \ang{20;24;}                                                        & \ang{20;22;30}                                             \\
+			                                           &                         & 3                  & \ang{295;60;}                  & \ang{20;21;}                                & \ang{115;64;}                  & \ang{20;23;}                                                        & \ang{20;22;}                                               \\
+			                                           & \multirow{3}{*}{$-1$级} & 1                  & \ang{255;20;}                  & \ang{20;18;}                                & \ang{75;20;}                   & \ang{20;20;}                                                        & \ang{20;19;}                                               \\
+			                                           &                         & 2                  & \ang{255;20;}                  & \ang{20;19;}                                & \ang{75;20;}                   & \ang{20;20;}                                                        & \ang{20;19;30}                                             \\
+			                                           &                         & 3                  & \ang{255;20;}                  & \ang{20;19;}                                & \ang{75;21;}                   & \ang{20;20;}                                                        & \ang{20;19;30}                                             \\\hline\hline
+		\end{tabular}}
+\end{table}\par
+
+同上，计算得到：
+$$\begin{aligned}
+		\phi_{y1} & =\errorSI{0.3535\pm 0.0005}{\rad} \\
+		\phi_{y2} & =\errorSI{0.3552\pm 0.0006}{\rad}
+	\end{aligned}$$
+
+对$k=\pm 1$我们有光栅公式:
+$$\lambda = d \sin{\phi}$$
+
+代入计算得到:
+$$\begin{aligned}
+		\lambda_{y1} & =\SI{577.344}{\nm} \\
+		\lambda_{y2} & =\SI{579.98}{\nm}
+	\end{aligned}$$
+
+也可以得到误差的数值:
+$$\begin{aligned}
+		\sigma_{\lambda_{y1}} & =\SI{1.1582}{\nm} \\
+		\sigma_{\lambda_{y2}} & =\SI{1.1632}{\nm}
+	\end{aligned}$$
+
+最后写出两条黄线的波长实验值:
+$$\begin{aligned}
+		\lambda_{y1} & =\errorSI{577\pm1}{\nm} \\
+		\lambda_{y2} & =\errorSI{580\pm1}{\nm}
+	\end{aligned}$$
+
+进一步求得波长差:$\Delta\lambda$和衍射角差$\Delta\phi$:
+$$\begin{aligned}
+		\Delta\phi    & =\errorSI{0.0017\pm0.0008}{\rad} \\
+		\Delta\lambda & =\errorSI{3\pm2}{\nm}
+	\end{aligned}$$
+
+那么角色散率为:
+$$D=\frac{\Delta\phi}{\Delta\lambda}=\errorSI{6\pm5e5}{\per\mm}$$
+
+\subsection{分辨本领与光栅有效面积中的刻线数目的关系}
+\begin{spacing}{1.6}
+	用纳光灯代替水银灯，把平行光管的狭缝调窄—直到在望远镜中能看到钠的两条1级黄色谱线，整体移动分光计，使黄线最亮，用一可变的狭缝光阑，套在平行光管的物镜上，调节其寛度，使其挡住光栅的一部份，减少它有效面积内刻痕的数目$N$，使两条黄谱线刚好能分辨，然后使用测微显微镜测出两条钠黄谱线刚好能分辨时的狭缝光阑寛度$l$，再计算$R$。
+	下面是三次测量的实验数据
+
+	\begin{table}[htbp]
+		\centering
+		\captionsetup{justification=centering,margin=2cm}
+		\caption{\label{tab:tab_data5}刚好分辨时窄缝寛度实验数据表}
+		\setlength{\tabcolsep}{3mm}{
+			\begin{tabular}{cccc}\hline\hline
+				n & 窄缝左端位置$x_1$(mm) & 窄缝右端位置$x_2$(mm) & 缝寛$l$(mm) \\
+				1 & 28.132                & 26.382                & 1.750       \\
+				2 & 36.968                & 35.346                & 1.622       \\
+				3 & 38.319                & 36.780                & 1.539       \\\hline\hline
+			\end{tabular}}
+	\end{table}\par
+
+	计算出平均的缝寛为:
+	$$\bar l = \errorSI{1.6\pm0.1}{\mm}$$
+
+	这时可以用光栅空间频率$f$计算出$R$:
+	$$R=kN=l\cdot f= 980\pm 60$$
+\end{spacing}
+
+\subsection{思考题}
+\begin{spacing}{1.6}
+	1. 使用公式(31.1)应保证甚么条件?实验中是如何保证的?如何检查条件是否满足?\par
+	答: 公式中应保证进入光栅的光是平行，而且之后经一个透镜聚在焦平面，实验中，是通过分光计的望远镜来聚焦在眼球来观察的，检查时应注意望远镜内的像是否清晰，调节望远镜来使条件得到满足。\par
+	2. 光栅调节中，放置光栅要求光栅平面垂直平分$b1b2$连线，这是为甚么?如果光栅平面仅仅与$b1b2$连线垂直，但并不平分$b1b2$连线，是否可以?为甚么?\par
+	答: 同题一所提到，在测量时由于望远镜会被旋转，若不平分$b1b2$连线，那么其焦点的位置并不固定，造成误差。\par
+	3. 实验中如果两边光谱线不等高，对测量结果有何影响?\par
+	答: 若光谱线不等高，光栅所在平面与分光计平面有夹角，那么光栅的有效光栅常数值会产生变化，令光谱线的距离产生变化，会导致测量结果出现系统误差。\par
+	4. 试说明光栅分光与三棱镜分光的光谱有何分别?\par
+	答: 三棱镜是通过光的色散来进行分光的，在两条频率极接近的谱线下，其色散率也相近，因此其色分辨本领并不强，而光栅则没有这个问题。\par
+	5. 两条很靠近的谱线若用光栅不能分辨开来，问是否可以使它们经光栅后，再用放大系统将它们分开?\par
+	答: 不可以，因为光栅的分辨能力是受其几何结构所限制，不能分辨的两束光是除了位置相近外，强度也是相干的，因此放大系统并不能消除这种物理限制。\par
+	6. 公式(31.5)与式(31.6)有何区别与联系? 公式(31.3)与式(31.4)有何区别与联系?\par
+	答: 从理论角度来说，他们都是等价的，但实际测量时由于不可能做到$Delta$无限接近0，那么两公式之间就存在一定差异，而且他们使用的物理变量也有差异，测量难度上并不一样。\par    \end{spacing}
+
+\subsection{感想}
+\begin{spacing}{1.6}
+	这次实验使用分光计进行测量，读数上存在一定的误差，左右读数盘的数据并不严格相差180度，导致后续测量误差很高。而且数据都是使用度分秒的方式记录，在实验数据处理上十分麻烦，使用LaTeX书写更为麻烦，使用了相当多的时间来打好这份报告，不过也是一个宝贵的学习经验。
+\end{spacing}
+\end{document}

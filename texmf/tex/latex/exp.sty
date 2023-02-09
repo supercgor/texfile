@@ -1,0 +1,283 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{seeExp}[2023/02/09]
+
+% Package options
+\DeclareOption{draft}{
+  \def\opdraft{true}
+}
+
+\ProcessOptions\relax
+
+% Document information
+\ifx \doctitle \undefined
+  \def \doctitle {Template}
+\fi
+
+\ifx \docauthor \underfined
+  \def \docauthor {ChonHei Lo}
+\fi
+
+\ifx \docdate \underfined
+  \def \docdate {\today}
+\fi
+
+\ifx \docemail \underfined
+  \def \docemail {seelooooo@stu.pku.edu.cn}
+\fi
+
+\ifx \doclogo \underfined
+  \def \doclogo {}
+\fi
+
+\ifx \docmotto \underfined
+  \def \docmotto {}
+\fi
+
+\title{\doctitle}
+\author{\docauthor}
+\date{\docdate}
+
+\def\true{true}
+\def\false{false}
+\def\doctoc{true}
+
+% Basic
+\RequirePackage{graphicx}
+% disable identation
+\setlength{\parindent}{0pt}
+\linespread{1.25}
+\usepackage[margin = 1in, a4paper, includeheadfoot]{geometry}   
+
+% Chinese support
+\RequirePackage{fontspec}
+\RequirePackage{xeCJK}
+% ensure link the fonts: sudo ln -s /home/supercgor/gitfile/texmf/fonts/ /usr/local/share/fonts
+\setCJKmainfont{/usr/local/share/fonts/Lyon/Lyon-Regular.ttf}[
+  BoldFont = /usr/local/share/fonts/Lyon/Lyon-Bold.ttf ,
+  ItalicFont = /usr/local/share/fonts/Lyon/Lyon-Italic.ttf ,
+  BoldItalicFont = /usr/local/share/fonts/Lyon/Lyon-Bold-Italic.ttf,
+]
+\setCJKsansfont{/usr/local/share/fonts/San-Francisco/SFUIText-Regular.otf}[
+  BoldFont = /usr/local/share/fonts/San-Francisco/SFUIText-Bold.otf,
+  ItalicFont = /usr/local/share/fonts/San-Francisco/SFUIText-Italic.otf,
+  BoldItalicFont = /usr/local/share/fonts/San-Francisco/SFUIText-Bold-Italic.otf,
+]
+
+\setCJKmonofont{/usr/local/share/fonts/iA-Fonts/iAWriterMonoS-Regular.ttf}[
+  BoldFont = /usr/local/share/fonts/iA-Fonts/iAWriterMonoS-Bold.ttf,
+  ItalicFont = /usr/local/share/fonts/iA-Fonts/iAWriterMonoS-Italic.ttf,
+  BoldItalicFont = /usr/local/share/fonts/iA-Fonts/iAWriterMonoS-Bold-Italic.ttf,
+]
+
+% Enable color
+\RequirePackage{xcolor}
+\definecolor{fav-red}{HTML}{D2042D}
+\definecolor{fav-alt-red}{HTML}{772222}
+\definecolor{fav-blue}{HTML}{0437F2}
+\definecolor{fav-alt-blue}{HTML}{005577}
+\definecolor{fav-green}{HTML}{00A36C}
+\definecolor{fav-purple}{HTML}{550077}
+\definecolor{fav-magenta}{HTML}{CC00CC}
+
+% Hyperlinks and Reference
+\RequirePackage{hyperref}
+\hypersetup{
+  pdftitle = {\doctitle},
+  pdfauthor = {\docauthor},
+  pdfcreator = {\docauthor},
+  pdfproducer = {XeTeX with hyperref package},
+  colorlinks = true,
+  linkcolor = {fav-blue},
+  citecolor = {fav-green},
+  urlcolor = {fav-blue},
+  filecolor = {fav-magenta},
+}
+
+% Header and footer
+\RequirePackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\fancyfoot[C]{\thepage}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyhead[R]{\docauthor}
+
+% define (fancy) plain style
+% use `\thispagestyle{plain}` when you want to remove everything (e.g. header line)
+% commonly used for title page or chapters, etc
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhf[FC]{\thepage} % always show pagenumber
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+% sections and subsection style
+\RequirePackage{titlesec}
+\titleformat
+{\section}
+[hang]
+{\bfseries\Large\sffamily}
+{\textcolor{fav-purple}{\S \thesection}}
+{0.5em}
+{}
+[]
+\titleformat
+{\subsection}
+[hang]
+{\bfseries\large\sffamily}
+{\textcolor{fav-alt-blue}{\S \thesubsection}}
+{0.5em}
+{}
+[]
+
+% List
+\RequirePackage{enumitem}
+
+% Theorem environment
+\RequirePackage{amsmath, amsthm, amssymb, tikz-cd}
+\RequirePackage{mathrsfs}
+% This package must be loaded AFTER amsmath
+% see https://tex.stackexchange.com/questions/19104/cleveref-with-counters-with-same-name
+\RequirePackage[nameinlink]{cleveref}
+
+\newenvironment{soln}[1][Solution]{\begin{proof}[#1]\renewcommand{\qedsymbol}{}}{\end{proof}}
+\newenvironment{subproof}[1][Proof]{\begin{proof}[#1]\renewcommand{\qedsymbol}{$\blacksquare$}}{\end{proof}}
+\newenvironment{claim}[1][Claim]{\par\medskip\textbf{#1.}\space}{\par}
+
+\theoremstyle{definition}
+\newtheorem*{rem*}{Remark}
+\newtheorem*{defin*}{Definition}
+\newtheorem*{exmp*}{Example}
+
+\theoremstyle{plain}
+\newtheorem*{thm*}{Theorem}
+\newtheorem*{prop*}{Proposition}
+\newtheorem*{lem*}{Lemma}
+\newtheorem*{cor*}{Corollary}
+
+\ifx \opdraft \true
+\newcounter{mathcounter}
+\else
+\newcounter{mathcounter}[section]
+\numberwithin{mathcounter}{section}
+\numberwithin{equation}{section}
+\fi
+
+\newtheorem{thm}[mathcounter]{Theorem}
+\newtheorem{cor}[mathcounter]{Corollary}
+\newtheorem{lem}[mathcounter]{Lemma}
+\newtheorem{prop}[mathcounter]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{defin}[mathcounter]{Definition}
+\newtheorem*{notation}{Notation}
+\newtheorem{exmp}[mathcounter]{Example}
+\newtheorem{prob}{Problem}
+\newtheorem{rem}[mathcounter]{Remark}
+
+\crefname{subsection}{subsec}{subsecs}
+\Crefname{subsection}{Subsection}{Subsections}
+\crefname{thm}{thm}{thms}
+\Crefname{thm}{Theorem}{Theorems}
+\crefname{lem}{lem}{lems}
+\Crefname{lem}{Lemma}{Lemmas}
+\crefname{cor}{cor}{cors}
+\Crefname{cor}{Corollary}{Corollaries}
+\crefname{prop}{prop}{props}
+\Crefname{prop}{Proposition}{Propositions}
+\crefname{defin}{defin}{defins}
+\Crefname{defin}{Definition}{Definitions}
+\crefname{exmp}{exmp}{exmps}
+\Crefname{exmp}{Example}{Examples}
+\crefname{prob}{prob}{probs}
+\Crefname{prob}{Problem}{Problems}
+\crefname{rem}{rem}{rems}
+\Crefname{rem}{Remark}{Remarks}
+
+% User-defined macros
+% olympiad geometry arc
+\RequirePackage{yhmath}
+\newcommand*{\arc}[1]{\wideparen{#1}}
+% math delimiter
+\RequirePackage{mathtools}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\ceiling}{\lceil}{\rceil}
+
+% common notation
+\newcommand*{\CC}{\mathbb C}
+\newcommand*{\FF}{\mathbb F}
+\newcommand*{\NN}{\mathbb N}
+\newcommand*{\QQ}{\mathbb Q}
+\newcommand*{\RR}{\mathbb R}
+\newcommand*{\ZZ}{\mathbb Z}
+\newcommand*{\HH}{\mathbb H}
+\DeclareMathOperator{\id}{id}
+\newcommand*{\divides}{\mid}
+\newcommand*{\ndivides}{\nmid}
+
+% field, galois theory
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\Adj}{Adj}
+\DeclareMathOperator{\fnorm}{N} % field norm
+
+% mathfrak primes, useful in number theory
+\newcommand*{\ka}{\mathfrak{a}}
+\newcommand*{\kb}{\mathfrak{b}}
+\newcommand*{\kp}{\mathfrak{p}}
+\newcommand*{\km}{\mathfrak{m}}
+\newcommand*{\kq}{\mathfrak{q}}
+\DeclareMathOperator{\Spec}{Spec}
+
+% commutative algebra
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\depth}{depth}
+\DeclareMathOperator{\Ass}{Ass}
+
+% representation
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\PGL}{PGL}
+
+% homological algebra
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+% lie group and lie algebra
+\newcommand*{\kg}{\mathfrak{g}}
+\newcommand*{\kh}{\mathfrak{h}}
+\newcommand*{\gl}{\mathfrak{gl}}
+
+% script letters etc.
+\newcommand{\SA}{\mathcal A}
+\newcommand{\SB}{\mathcal B}
+\newcommand{\SC}{\mathcal C}
+\newcommand{\SF}{\mathcal F}
+\newcommand{\SG}{\mathcal G}
+\newcommand{\SH}{\mathcal H}
+\newcommand{\SU}{\mathcal U}
+\newcommand{\OO}{\mathcal O}
+
+\newcommand{\SCA}{\mathscr A}
+\newcommand{\SCB}{\mathscr B}
+\newcommand{\SCC}{\mathscr C}
+\newcommand{\SCD}{\mathscr D}
+\newcommand{\SCE}{\mathscr E}
+\newcommand{\SCF}{\mathscr F}
+\newcommand{\SCG}{\mathscr G}
+\newcommand{\SCH}{\mathscr H}
+\newcommand{\SCU}{\mathscr U}
+
+% category theory
+\DeclareMathOperator{\colim}{colim}
