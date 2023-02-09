@@ -1,0 +1,85 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{seeBeamer}[2023/02/09]
+
+% Package options
+\DeclareOption{draft}{
+  \def\opdraft{true}
+}
+
+\ProcessOptions\relax
+
+% Document information
+\ifx \doctitle \undefined
+  \def \doctitle {Template}
+\fi
+
+\ifx \docauthor \underfined
+  \def \docauthor {ChonHei Lo}
+\fi
+
+\ifx \docdate \underfined
+  \def \docdate {\today}
+\fi
+
+\ifx \docemail \underfined
+  \def \docemail {seelooooo@stu.pku.edu.cn}
+\fi
+
+\ifx \doclogo \underfined
+  \def \doclogo {}
+\fi
+
+\ifx \docmotto \underfined
+  \def \docmotto {}
+\fi
+
+\title{\doctitle}
+\author{\docauthor}
+\date{\docdate}
+
+\def\true{true}
+\def\false{false}
+\def\doctoc{true}
+
+
+% Chinese support
+\RequirePackage{fontspec}
+\RequirePackage{xeCJK}
+% ensure link the fonts: sudo cp /home/supercgor/gitfile/texfile/fonts/ /usr/local/share/fonts
+\setCJKmainfont{SourceHanSerif.ttc}[
+  Path = /usr/local/share/fonts/SourceHan/,
+]
+\setCJKsansfont{SourceHanSans.ttc}[
+  Path = /usr/local/share/fonts/SourceHan/,
+]
+
+\setCJKmonofont{SourceHanMono.ttc}[
+  Path = /usr/local/share/fonts/SourceHan/,
+]
+
+% Enable color
+\RequirePackage{xcolor}
+\definecolor{fav-red}{HTML}{D2042D}
+\definecolor{fav-alt-red}{HTML}{772222}
+\definecolor{fav-blue}{HTML}{0437F2}
+\definecolor{fav-alt-blue}{HTML}{005577}
+\definecolor{fav-green}{HTML}{00A36C}
+\definecolor{fav-purple}{HTML}{550077}
+\definecolor{fav-magenta}{HTML}{CC00CC}
+
+
+% List
+\RequirePackage{enumitem}
+
+% Theorem environment
+\RequirePackage{amsmath, amsthm, amssymb, tikz-cd}
+
+\RequirePackage[nameinlink]{cleveref}
+
+% Setup appearance:
+
+\setbeamertemplate{navigation symbols}{}
+
+% Physics package
+% http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/physics/physics.pdf
+\usepackage{physics}
