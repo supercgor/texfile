@@ -51,22 +51,16 @@
 % Chinese support
 \RequirePackage{fontspec}
 \RequirePackage{xeCJK}
-% ensure link the fonts: sudo ln -s /home/supercgor/gitfile/texmf/fonts/ /usr/local/share/fonts
-\setCJKmainfont{/usr/local/share/fonts/Lyon/Lyon-Regular.ttf}[
-  BoldFont = /usr/local/share/fonts/Lyon/Lyon-Bold.ttf ,
-  ItalicFont = /usr/local/share/fonts/Lyon/Lyon-Italic.ttf ,
-  BoldItalicFont = /usr/local/share/fonts/Lyon/Lyon-Bold-Italic.ttf,
+% ensure link the fonts: sudo cp /home/supercgor/gitfile/texfile/fonts/ /usr/local/share/fonts
+\setCJKmainfont{SourceHanSerif.ttc}[
+  Path = /usr/local/share/fonts/SourceHan/,
 ]
-\setCJKsansfont{/usr/local/share/fonts/San-Francisco/SFUIText-Regular.otf}[
-  BoldFont = /usr/local/share/fonts/San-Francisco/SFUIText-Bold.otf,
-  ItalicFont = /usr/local/share/fonts/San-Francisco/SFUIText-Italic.otf,
-  BoldItalicFont = /usr/local/share/fonts/San-Francisco/SFUIText-Bold-Italic.otf,
+\setCJKsansfont{SourceHanSans.ttc}[
+  Path = /usr/local/share/fonts/SourceHan/,
 ]
 
-\setCJKmonofont{/usr/local/share/fonts/iA-Fonts/iAWriterMonoS-Regular.ttf}[
-  BoldFont = /usr/local/share/fonts/iA-Fonts/iAWriterMonoS-Bold.ttf,
-  ItalicFont = /usr/local/share/fonts/iA-Fonts/iAWriterMonoS-Italic.ttf,
-  BoldItalicFont = /usr/local/share/fonts/iA-Fonts/iAWriterMonoS-Bold-Italic.ttf,
+\setCJKmonofont{SourceHanMono.ttc}[
+  Path = /usr/local/share/fonts/SourceHan/,
 ]
 
 % Enable color

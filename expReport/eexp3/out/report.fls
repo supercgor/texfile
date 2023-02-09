@@ -1008,5 +1008,15 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.st
 INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT out/report.out
+INPUT out/report.out
+INPUT out/report.out
+INPUT out/report.out
+INPUT out/report.out
+INPUT out/report.out
+INPUT out/report.out
+INPUT out/report.out
+INPUT out/report.out
+INPUT out/report.out
 OUTPUT out/report.out
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
