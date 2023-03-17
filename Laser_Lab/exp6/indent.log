@@ -1,9 +1,9 @@
 INFO:  latexindent version 3.15, 2022-01-21, a script to indent .tex files
        latexindent lives here: /usr/share/texlive/texmf-dist/scripts/latexindent/
-       Wed Mar  1 19:37:19 2023
-       Filename: /home/supercgor/gitfile/texfile/Modern_Physics_Lab/example/template.tex
+       Sun Mar 12 19:42:01 2023
+       Filename: /home/supercgor/gitfile/texfile/Laser_Lab/exp6/report.tex
 INFO:  Processing switches:
-INFO:  Directory for backup files and indent.log: /home/supercgor/gitfile/texfile/Modern_Physics_Lab/example
+INFO:  Directory for backup files and indent.log: /home/supercgor/gitfile/texfile/Laser_Lab/exp6
 INFO:  YAML settings read: defaultSettings.yaml
        Reading defaultSettings.yaml from /usr/share/texlive/texmf-dist/scripts/latexindent/defaultSettings.yaml
 INFO:  YAML settings read: indentconfig.yaml or .indentconfig.yaml
